@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUTA Clinic | Appointments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-page="appointments" data-requires-auth="true">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">SC</div><div class="brand-copy"><h1>SUTA CLINIC</h1><p>Phlebotomy AI Queue &amp;<br>Appointment System</p></div></div>
+      <nav aria-label="Primary navigation"><ul class="nav-list">
+        <li><a class="nav-link" data-nav="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li><a class="nav-link" data-nav="queue" href="queue.html">Queue Management</a></li>
+        <li><a class="nav-link" data-nav="appointments" href="appointments.html">Appointments</a></li>
+        <li><a class="nav-link" data-nav="patients" href="patients.html">Patients</a></li>
+        <li><a class="nav-link" data-nav="ai-predictions" href="ai-predictions.html">AI Predictions</a></li>
+        <li><a class="nav-link" data-nav="reports" href="reports.html">Reports &amp; Analytics</a></li>
+        <li><a class="nav-link" data-nav="settings" href="settings.html">Settings</a></li>
+        <li><a class="nav-link logout-link" href="../index.html" data-logout="true">Logout</a></li>
+      </ul></nav>
+      <div class="sidebar-footer"><div>&copy; 2026 SUTA Clinic</div><div>All rights reserved.</div></div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-title"><button class="icon-button mobile-sidebar-toggle" id="sidebarToggle" type="button">=</button><span>Appointments</span></div>
+        <div class="profile"><div class="profile-avatar">U</div><div class="profile-copy"><strong data-user-name>Admin User</strong><span>Front Desk</span></div></div>
+      </header>
+
+      <section class="appointment-template panel">
+        <div class="appointment-template-head">
+          <div class="appointment-template-brand">
+            <div class="appointment-template-badge">
+              <i data-lucide="shield-plus"></i>
+            </div>
+            <div>
+              <h2>SUTA Clinic</h2>
+              <p>PhlebotomyAI Queue &amp; Appointment System</p>
+            </div>
+          </div>
+          <div class="appointment-template-art" aria-hidden="true">
+            <i data-lucide="activity"></i>
+            <i data-lucide="test-tube-diagonal"></i>
+          </div>
+        </div>
+
+        <div class="appointment-template-body">
+          <div class="appointment-template-title">
+            <i data-lucide="calendar-plus-2"></i>
+            <div>
+              <h3>Appointment Form</h3>
+              <p>Please fill in the patient information below to book an appointment.</p>
+            </div>
+          </div>
+
+          <div class="appointment-toolbar">
+            <div class="appointment-toolbar-copy">
+              <strong>Quick Fill</strong>
+              <span>Load all 10 patients from the sample CSV into Appointments and Queue.</span>
+            </div>
+            <button class="secondary-button appointment-bulk-button" id="fillSamplePatientsButton" type="button">Fill 10 Sample Patients</button>
+          </div>
+
+          <form id="appointmentBookingForm" class="appointment-form-grid-block">
+            <div class="appointment-fields-grid">
+              <label class="appointment-field">
+                <span>HA Number <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="badge-plus"></i>
+                  <input id="haNumber" name="haNumber" type="text" placeholder="Enter HA number" required>
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>Full Name <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="user-round"></i>
+                  <input id="fullName" name="fullName" type="text" placeholder="Enter patient full name" required>
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>Gender <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="users-round"></i>
+                  <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>Date Of Birth <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="calendar"></i>
+                  <input id="dateOfBirth" name="dateOfBirth" type="date" required>
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>Phone Number <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="phone"></i>
+                  <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="08X-XXX-XXXX" required>
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>Email</span>
+                <div class="appointment-input">
+                  <i data-lucide="mail"></i>
+                  <input id="emailAddress" name="emailAddress" type="email" placeholder="patient@email.com">
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>National ID / Passport <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="id-card"></i>
+                  <input id="nationalId" name="nationalId" type="text" placeholder="Enter ID number" required>
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>Appointment Date <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="calendar-range"></i>
+                  <input id="appointmentDate" name="appointmentDate" type="date" required>
+                </div>
+              </label>
+
+              <label class="appointment-field">
+                <span>Appointment Time <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="clock-3"></i>
+                  <select id="appointmentTime" name="appointmentTime" required>
+                    <option value="">Select appointment time</option>
+                    <option>08:00 AM</option>
+                    <option>08:30 AM</option>
+                    <option>09:00 AM</option>
+                    <option>09:30 AM</option>
+                    <option>10:00 AM</option>
+                    <option>10:30 AM</option>
+                    <option>11:00 AM</option>
+                    <option>01:00 PM</option>
+                    <option>01:30 PM</option>
+                    <option>02:00 PM</option>
+                    <option>02:30 PM</option>
+                  </select>
+                </div>
+              </label>
+
+              <label class="appointment-field appointment-field-full">
+                <span>Laboratory Test Type <em>*</em></span>
+                <div class="appointment-input">
+                  <i data-lucide="flask-conical"></i>
+                  <select id="laboratoryTestType" name="laboratoryTestType" required>
+                    <option value="">Select Test Type</option>
+                    <option>CBC</option>
+                    <option>FBS</option>
+                    <option>Lipid Profile</option>
+                    <option>Thyroid Panel</option>
+                    <option>Liver Function Test</option>
+                    <option>Urinalysis</option>
+                    <option>HbA1c</option>
+                  </select>
+                </div>
+              </label>
+
+              <label class="appointment-field appointment-field-full">
+                <span>Symptoms / Additional Information</span>
+                <div class="appointment-input appointment-input-textarea">
+                  <i data-lucide="file-text"></i>
+                  <textarea id="additionalInfo" name="additionalInfo" placeholder="Enter patient symptoms or additional notes..."></textarea>
+                </div>
+              </label>
+            </div>
+
+            <label class="appointment-confirm">
+              <input id="confirmDetails" name="confirmDetails" type="checkbox" required>
+              <span>I confirm that the information provided is correct.</span>
+            </label>
+
+            <div class="appointment-note">
+              <i data-lucide="info"></i>
+              <span><strong>Important Note:</strong> Please arrive 10 minutes before your appointment time. Bring a valid ID and any previous test results if available.</span>
+            </div>
+
+            <div class="appointment-actions">
+              <button class="secondary-button appointment-reset" type="reset">Clear Form</button>
+              <button class="primary-button appointment-submit" type="submit">Book Appointment</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

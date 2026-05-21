@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUTA Clinic | Login</title>
+  <meta name="description" content="SUTA Clinic Phlebotomy AI Queue login page.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="login-body">
+  <main class="login-shell">
+    <section class="login-hero">
+      <div class="login-badge">
+        <span class="brand-mark-small">SC</span>
+        <span>SUTA Clinic</span>
+      </div>
+      <h1>Phlebotomy AI Queue &amp; Appointment System</h1>
+      <p>
+        Sign in to access the clinic dashboard, manage queue flow, review appointments,
+        and monitor daily laboratory operations in one place.
+      </p>
+
+      <div class="hero-points">
+        <article class="hero-point">
+          <h2>Queue Monitoring</h2>
+          <p>Track live counters, patient wait time, and service status.</p>
+        </article>
+        <article class="hero-point">
+          <h2>Appointment Control</h2>
+          <p>Review today's schedule and prepare for peak collection hours.</p>
+        </article>
+        <article class="hero-point">
+          <h2>AI Support</h2>
+          <p>Surface simple predictions and staffing suggestions for the team.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="login-card-wrap">
+      <div class="login-card panel">
+        <div class="login-card-head">
+          <p class="eyebrow">Welcome back</p>
+          <h2>Sign in to continue</h2>
+          <span>Enter your username and password to open the dashboard.</span>
+        </div>
+
+        <form id="loginForm" class="login-form">
+          <label class="form-field" for="username">
+            <span>Username</span>
+            <input id="username" name="username" type="text" placeholder="Enter username" required>
+          </label>
+
+          <label class="form-field" for="password">
+            <span>Password</span>
+            <input id="password" name="password" type="password" placeholder="Enter password" required>
+          </label>
+
+          <button class="primary-button" type="submit">Access Dashboard</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

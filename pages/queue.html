@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUTA Clinic | Queue Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-page="queue" data-requires-auth="true">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">SC</div><div class="brand-copy"><h1>SUTA CLINIC</h1><p>Phlebotomy AI Queue &amp;<br>Appointment System</p></div></div>
+      <nav aria-label="Primary navigation"><ul class="nav-list">
+        <li><a class="nav-link" data-nav="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li><a class="nav-link" data-nav="queue" href="queue.html">Queue Management</a></li>
+        <li><a class="nav-link" data-nav="appointments" href="appointments.html">Appointments</a></li>
+        <li><a class="nav-link" data-nav="patients" href="patients.html">Patients</a></li>
+        <li><a class="nav-link" data-nav="ai-predictions" href="ai-predictions.html">AI Predictions</a></li>
+        <li><a class="nav-link" data-nav="reports" href="reports.html">Reports &amp; Analytics</a></li>
+        <li><a class="nav-link" data-nav="settings" href="settings.html">Settings</a></li>
+        <li><a class="nav-link logout-link" href="../index.html" data-logout="true">Logout</a></li>
+      </ul></nav>
+      <div class="sidebar-footer"><div>&copy; 2026 SUTA Clinic</div><div>All rights reserved.</div></div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-title"><button class="icon-button mobile-sidebar-toggle" id="sidebarToggle" type="button">=</button><span>Queue Management</span></div>
+        <div class="profile"><div class="profile-avatar">U</div><div class="profile-copy"><strong data-user-name>Admin User</strong><span>Queue Supervisor</span></div></div>
+      </header>
+
+      <section class="page-grid">
+        <article class="panel page-intro">
+          <h2>Live patient flow</h2>
+          <p>Track the queue from waiting to collection completion, then use this page later for live updates and counter assignment logic.</p>
+        </article>
+
+        <section class="panel table-card">
+          <div class="section-head"><h3>Current Queue</h3><span class="table-meta" id="queueTableCount">24 active tokens</span></div>
+          <table>
+            <thead>
+              <tr><th>Token</th><th>Patient</th><th>Status</th><th>Estimated Wait</th><th>Counter</th><th>Action</th></tr>
+            </thead>
+            <tbody id="queueManagementTableBody"></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

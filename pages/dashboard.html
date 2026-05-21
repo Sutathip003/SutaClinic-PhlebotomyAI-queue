@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUTA Clinic | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-page="dashboard" data-requires-auth="true">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SC</div>
+        <div class="brand-copy">
+          <h1>SUTA CLINIC</h1>
+          <p>Phlebotomy AI Queue &amp;<br>Appointment System</p>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" data-nav="dashboard" href="dashboard.html">Dashboard</a></li>
+          <li><a class="nav-link" data-nav="queue" href="queue.html">Queue Management</a></li>
+          <li><a class="nav-link" data-nav="appointments" href="appointments.html">Appointments</a></li>
+          <li><a class="nav-link" data-nav="patients" href="patients.html">Patients</a></li>
+          <li><a class="nav-link" data-nav="ai-predictions" href="ai-predictions.html">AI Predictions</a></li>
+          <li><a class="nav-link" data-nav="reports" href="reports.html">Reports &amp; Analytics</a></li>
+          <li><a class="nav-link" data-nav="settings" href="settings.html">Settings</a></li>
+          <li><a class="nav-link logout-link" href="../index.html" data-logout="true">Logout</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div>&copy; 2026 SUTA Clinic</div>
+        <div>All rights reserved.</div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-title">
+          <button class="icon-button mobile-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Toggle sidebar">=</button>
+          <button class="icon-button" type="button" aria-label="Menu">=</button>
+          <div class="header-queue-controls">
+            <button class="queue-action-button hold header-control-button" id="holdCurrentPatientButton" type="button" disabled>Hold</button>
+            <button class="queue-action-button call header-control-button" id="callNextPatientButton" type="button" disabled>Call</button>
+            <button class="queue-action-button reset header-control-button" id="resetDashboardButton" type="button">Reset</button>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="profile">
+            <div class="profile-avatar">U</div>
+            <div class="profile-copy">
+              <strong data-user-name>Admin User</strong>
+              <span>Administrator</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <div class="stats-grid">
+          <article class="panel stat-card">
+            <div class="stat-copy">
+              <p>Today's Appointments</p>
+              <h2 style="color: var(--purple);" id="dashboardAppointmentCount">0</h2>
+              <span class="trend">New bookings will appear here</span>
+            </div>
+            <div class="metric-icon purple">A</div>
+          </article>
+
+          <article class="panel stat-card">
+            <div class="stat-copy">
+              <p>Patients in Queue</p>
+              <h2 style="color: var(--blue);" id="dashboardQueueCount">0</h2>
+              <span class="trend">Queue starts after first booking</span>
+            </div>
+            <div class="metric-icon blue">Q</div>
+          </article>
+
+          <article class="panel stat-card">
+            <div class="stat-copy">
+              <p>Completed Today</p>
+              <h2 style="color: var(--green);" id="dashboardCompletedCount">0</h2>
+              <span class="trend">Completed records will update here</span>
+            </div>
+            <div class="metric-icon green">C</div>
+          </article>
+
+          <article class="panel stat-card">
+            <div class="stat-copy">
+              <p>Hold</p>
+              <h2 style="color: var(--amber);" id="dashboardHoldCount">0</h2>
+              <span class="trend">Held patients will appear here</span>
+            </div>
+            <div class="metric-icon amber">H</div>
+          </article>
+
+          <article class="panel stat-card">
+            <div class="stat-copy">
+              <p>No Shows</p>
+              <h2 style="color: var(--red);" id="dashboardNoShowCount">0</h2>
+              <span class="trend">No-show count is currently empty</span>
+            </div>
+            <div class="metric-icon red">N</div>
+          </article>
+        </div>
+
+        <div class="queue-overview-grid">
+          <section class="panel panel-pad queue-panel">
+            <div class="section-head">
+              <h3>Live Queue</h3>
+              <a class="section-link" href="queue.html">View Full Queue</a>
+            </div>
+
+            <div class="queue-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Token No.</th>
+                    <th>Patient Name</th>
+                    <th>Status</th>
+                    <th>Estimated Wait</th>
+                    <th>Counter</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboardQueueTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel panel-pad queue-panel">
+            <div class="section-head">
+              <h3>Hold List</h3>
+              <span class="section-link" id="holdListCount">0 patients on hold</span>
+            </div>
+
+            <div class="queue-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Token No.</th>
+                    <th>Patient Name</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboardHoldListBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel panel-pad queue-panel">
+            <div class="section-head">
+              <h3>Completed Queue</h3>
+              <span class="section-link" id="completedQueueCount">0 completed</span>
+            </div>
+
+            <div class="queue-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Token No.</th>
+                    <th>Patient Name</th>
+                    <th>Status</th>
+                    <th>Estimated Wait</th>
+                    <th>Counter</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboardCompletedQueueTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <aside class="panel panel-pad queue-panel">
+            <div class="section-head">
+              <h3>Queue Summary</h3>
+            </div>
+
+            <div class="now-serving-card">
+              <p>Now Serving</p>
+              <strong id="nowServingToken">-</strong>
+              <span id="nowServingPatient">Waiting for first patient call</span>
+            </div>
+
+            <div class="summary-wrap">
+              <div class="donut" aria-hidden="true">
+                <div class="donut-copy">
+                  <div>
+                    <strong id="queueSummaryTotal">0</strong>
+                    <span>Total</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="legend">
+                <div class="legend-item"><div class="legend-label"><span class="dot" style="background:#52c88b;"></span><span>In Progress</span></div><span id="queueCountInProgress">0</span></div>
+                <div class="legend-item"><div class="legend-label"><span class="dot" style="background:#4b6bff;"></span><span>Waiting</span></div><span id="queueCountWaiting">0</span></div>
+                <div class="legend-item"><div class="legend-label"><span class="dot" style="background:#8a63ff;"></span><span>Completed</span></div><span id="queueCountCompleted">0</span></div>
+                <div class="legend-item"><div class="legend-label"><span class="dot" style="background:#f15f46;"></span><span>No Show</span></div><span id="queueCountNoShow">0</span></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

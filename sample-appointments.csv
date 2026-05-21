@@ -1,0 +1,11 @@
+HA Number,Full Name,Gender,Date Of Birth,Phone Number,Email,National ID / Passport,Appointment Date,Appointment Time,Laboratory Test Type,Symptoms / Additional Information
+HA-25001,Narisa Boonmee,Female,1992-03-14,081-234-5678,narisa.boonmee@example.com,TH1234567890,2026-05-21,08:00 AM,CBC,Fatigue and dizziness for 2 days
+HA-25002,Somchai Prasert,Male,1988-11-02,082-345-6789,somchai.prasert@example.com,TH2345678901,2026-05-21,08:30 AM,FBS,Fasting blood sugar follow-up
+HA-25003,Pimchanok Saelim,Female,1995-07-19,083-456-7890,pimchanok.saelim@example.com,TH3456789012,2026-05-21,09:00 AM,Lipid Profile,Annual wellness laboratory check
+HA-25004,Anan Chaiyasit,Male,1979-01-25,084-567-8901,anan.chaiyasit@example.com,TH4567890123,2026-05-21,09:30 AM,Liver Function Test,Mild abdominal discomfort and physician referral
+HA-25005,Supansa Kittipong,Female,2001-09-08,085-678-9012,supansa.kittipong@example.com,TH5678901234,2026-05-21,10:00 AM,Thyroid Panel,Weight fluctuation and tiredness
+HA-25006,Thanawat Rojanaporn,Male,1985-05-30,086-789-0123,thanawat.rojanaporn@example.com,TH6789012345,2026-05-21,10:30 AM,Urinalysis,Routine urine screening
+HA-25007,Kanyarat Meesuk,Female,1997-12-11,087-890-1234,kanyarat.meesuk@example.com,TH7890123456,2026-05-21,11:00 AM,HbA1c,Diabetes monitoring review
+HA-25008,Peerawat Suksri,Male,1990-04-21,088-901-2345,peerawat.suksri@example.com,TH8901234567,2026-05-21,01:00 PM,CBC,Pre-employment medical exam
+HA-25009,Chutima Wattanakul,Female,1983-08-16,089-012-3456,chutima.wattanakul@example.com,TH9012345678,2026-05-21,01:30 PM,FBS,Follow-up after previous elevated glucose
+HA-25010,Phakorn Intarasuk,Male,1999-06-05,080-123-4567,phakorn.intarasuk@example.com,TH0123456789,2026-05-21,02:00 PM,Lipid Profile,Check cholesterol after diet program

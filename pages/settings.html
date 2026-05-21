@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUTA Clinic | Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-page="settings" data-requires-auth="true">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">SC</div><div class="brand-copy"><h1>SUTA CLINIC</h1><p>Phlebotomy AI Queue &amp;<br>Appointment System</p></div></div>
+      <nav aria-label="Primary navigation"><ul class="nav-list">
+        <li><a class="nav-link" data-nav="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li><a class="nav-link" data-nav="queue" href="queue.html">Queue Management</a></li>
+        <li><a class="nav-link" data-nav="appointments" href="appointments.html">Appointments</a></li>
+        <li><a class="nav-link" data-nav="patients" href="patients.html">Patients</a></li>
+        <li><a class="nav-link" data-nav="ai-predictions" href="ai-predictions.html">AI Predictions</a></li>
+        <li><a class="nav-link" data-nav="reports" href="reports.html">Reports &amp; Analytics</a></li>
+        <li><a class="nav-link" data-nav="settings" href="settings.html">Settings</a></li>
+        <li><a class="nav-link logout-link" href="../index.html" data-logout="true">Logout</a></li>
+      </ul></nav>
+      <div class="sidebar-footer"><div>&copy; 2026 SUTA Clinic</div><div>All rights reserved.</div></div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-title"><button class="icon-button mobile-sidebar-toggle" id="sidebarToggle" type="button">=</button><span>Settings</span></div>
+        <div class="profile"><div class="profile-avatar">U</div><div class="profile-copy"><strong data-user-name>Admin User</strong><span>Administrator</span></div></div>
+      </header>
+
+      <section class="panel settings-card">
+        <div class="section-head"><h3>Profile Settings</h3></div>
+        <form class="stack-form" id="settingsForm">
+          <label class="form-field" for="displayName">
+            <span>Display Name</span>
+            <input id="displayName" name="displayName" type="text" placeholder="Update display name">
+          </label>
+          <label class="form-field" for="clinicEmail">
+            <span>Clinic Email</span>
+            <input id="clinicEmail" name="clinicEmail" type="email" placeholder="clinic@suta.com">
+          </label>
+          <label class="form-field" for="timezone">
+            <span>Timezone</span>
+            <select id="timezone" name="timezone">
+              <option>Asia/Bangkok</option>
+              <option>UTC</option>
+              <option>America/New_York</option>
+            </select>
+          </label>
+          <div class="action-row">
+            <button class="secondary-button" type="reset">Clear</button>
+            <button class="primary-button" type="submit">Save Settings</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

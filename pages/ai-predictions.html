@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUTA Clinic | AI Predictions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-page="ai-predictions" data-requires-auth="true">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">SC</div><div class="brand-copy"><h1>SUTA CLINIC</h1><p>Phlebotomy AI Queue &amp;<br>Appointment System</p></div></div>
+      <nav aria-label="Primary navigation"><ul class="nav-list">
+        <li><a class="nav-link" data-nav="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li><a class="nav-link" data-nav="queue" href="queue.html">Queue Management</a></li>
+        <li><a class="nav-link" data-nav="appointments" href="appointments.html">Appointments</a></li>
+        <li><a class="nav-link" data-nav="patients" href="patients.html">Patients</a></li>
+        <li><a class="nav-link" data-nav="ai-predictions" href="ai-predictions.html">AI Predictions</a></li>
+        <li><a class="nav-link" data-nav="reports" href="reports.html">Reports &amp; Analytics</a></li>
+        <li><a class="nav-link" data-nav="settings" href="settings.html">Settings</a></li>
+        <li><a class="nav-link logout-link" href="../index.html" data-logout="true">Logout</a></li>
+      </ul></nav>
+      <div class="sidebar-footer"><div>&copy; 2026 SUTA Clinic</div><div>All rights reserved.</div></div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-title"><button class="icon-button mobile-sidebar-toggle" id="sidebarToggle" type="button">=</button><span>AI Predictions</span></div>
+        <div class="profile"><div class="profile-avatar">U</div><div class="profile-copy"><strong data-user-name>Admin User</strong><span>Operations Lead</span></div></div>
+      </header>
+
+      <section class="cards-grid">
+        <article class="panel settings-card">
+          <div class="insight-title"><span>Forecast</span></div>
+          <p class="settings-note">Expected collection volume will rise by 18% between 8:00 AM and 11:00 AM based on this week’s intake pattern.</p>
+        </article>
+        <article class="panel settings-card">
+          <div class="insight-title"><span>Staffing Suggestion</span></div>
+          <p class="settings-note">Open one additional blood draw counter from 9:00 AM to 11:30 AM to keep wait time below 20 minutes.</p>
+        </article>
+        <article class="panel settings-card">
+          <div class="insight-title"><span>No-show Risk</span></div>
+          <p class="settings-note">Two afternoon appointments have a medium no-show probability due to previous attendance history.</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
